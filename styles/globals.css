@@ -2,26 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.posts-inner:nth-child(odd) > a:nth-child(1) {
+  grid-row: 2 span;
+  grid-column: 2 span;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.posts-inner:nth-child(even) > a:nth-child(3) {
+  grid-row: 2 span;
+  grid-column: 2 span;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#__next > h2, #__next > hr {
+  display: none;
+}
+
+h1 {
+  font-size: 42px;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+h3 {
+  font-size: 27px;
+  margin: 20px 0;
+}
+
+h4 {
+  font-size: 22px;
+  margin: 20px 0;
+}
+
+h5 {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+h6 {
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+p {
+  margin: 20px 0;
+}
+
+ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+
+code {
+  background-color: #171724;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+.post a {
+  @apply underline hover:text-[#ddb5f2] underline-offset-4
+}
+
+blockquote {
+  background-color: #171724;
+  border-left: 5px solid #ddb5f2;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+blockquote p {
+  margin: 10px 0;
 }
